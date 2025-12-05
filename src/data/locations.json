@@ -1,0 +1,97 @@
+[
+  {
+    "Main Campus": {
+      "name": ["main Campus", "health campus", "social campus", "ambo main campus"],
+      "gate_closing_time": "3:00 PM",
+      "dorm_types": ["8-student rooms (6 lockers)", "6-student rooms (6 lockers)"],
+      "utilities": ["stable electricity", "consistent water supply"],
+      "map": {
+        "cafe": "https://maps.app.goo.gl/QangRgbJxWodCrMaA",
+        "dorm male": "https://maps.app.goo.gl/6RWVGFV1fdwn8whP6",
+        "dorm female": "https://maps.app.goo.gl/YXy2S4FKuz4PTCcP9",
+        "library": "https://maps.app.goo.gl/taSn6yThdjCKmSWh9",
+        "launch": "https://maps.app.goo.gl/tu5FiNTvrNiAtpYE9",
+        "clinic": "https://maps.app.goo.gl/4pqJ8z5VgCMEUDx76",
+        "registral": "https://maps.app.goo.gl/MZ7X8P4Zzkrmc9fX6",
+        "super market": "https://maps.app.goo.gl/qSdSjQsekUfLYtFf7",
+        "bus station": "https://maps.app.goo.gl/2AaSDouvxES7NGpu5",
+        "orthodox church": "https://maps.app.goo.gl/fqBT2bqWHoJeaZfJA",
+        "protestant church": "https://maps.app.goo.gl/rN1U8Lxx1v8d4oMSA",
+        "mosque": "https://maps.app.goo.gl/eMjQ3LDGBk2Vg5BfA",
+        "hospital": "https://maps.app.goo.gl/4pqJ8z5VgCMEUDx76"
+      }
+    }
+  },
+  {
+    "Hachalu Hundesa Campus": {
+      "name": ["techno Campus", "hachalu hundesa campus", "awaro campus", "hachalu campus"],
+      "gate_closing_time": "2:30 PM",
+      "dorm_types": ["6-student rooms (6 lockers)", "4-student rooms (4 lockers)"],
+      "utilities": ["stable electricity", "no water shortages", "Wi-Fi in all blocks"],
+      "map": {
+        "cafe": "https://maps.app.goo.gl/H4XLnciNzB8htg6WA",
+        "dorm male": "https://maps.app.goo.gl/z1NomQ2TpsC2iByaA",
+        "dorm female": "https://maps.app.goo.gl/as3s3MWEYdQmg9PF7",
+        "registrar": "https://maps.app.goo.gl/JZXoy3MH5rbbV34d8",
+        "lounge": "https://maps.app.goo.gl/9BLDZeuADFFXxboo7",
+        "library": "https://maps.app.goo.gl/rxreD8ZFmNkkkPy68",
+        "clinic": "https://maps.app.goo.gl/wNSmMkBefsRv5tgP9",
+        "market": "https://maps.app.goo.gl/AGd2R7L7gDDzJhyy5",
+        "bus station": "https://maps.app.goo.gl/Fe2AJinRiSENrL67A",
+        "hotel": "https://maps.app.goo.gl/m3FQDhfbnEDkqZgV8",
+        "market place": "https://maps.app.goo.gl/km6tZCRBK1eNc96i9",
+        "hospital": "https://maps.app.goo.gl/Fp1isk3YDHfq2Tjq7",
+        "church": "https://maps.app.goo.gl/9teALy84N6uMWL79A",
+        "mosque": "https://maps.app.goo.gl/jdFaTk6g5YB7pu3D9",
+        "church orthodox": "https://maps.app.goo.gl/yC4QJJw5AAQymSQt7"
+      }
+    }
+  },
+  {
+    "Guder Campus": {
+      "name": ["guder Campus", "guder mamo mezemr campus", "guder mamo", "agriculture campus"],
+      "gate_closing_time": "3:30 PM",
+      "dorm_types": ["6-student rooms (8 lockers)"],
+      "utilities": ["stable electricity", "consistent water supply", "Wi-Fi in all blocks"],
+      "map": {
+        "cafe": "https://maps.app.goo.gl/wywJWYUDCaBsr86YA",
+        "dorm male": "https://maps.app.goo.gl/5hdaBhhpLWbqMx8e9",
+        "dorm female": "https://maps.app.goo.gl/taavLsrHMF6T9tmWA",
+        "police dorm": "https://maps.app.goo.gl/NaP8g2fub6nA6bXd7",
+        "library": "https://maps.app.goo.gl/ASttdZFhHTNgNoPN8",
+        "launch": "https://maps.app.goo.gl/DXu8WSjWMJMgY5Qm9",
+        "clinic": "https://maps.app.goo.gl/i5613DnxGtjGGGCQ7",
+        "registral": "https://maps.app.goo.gl/f1zztkKG1g6HCZk66",
+        "market": "...",
+        "bus station": "https://maps.app.goo.gl/ANu3gtUzjKWc7M6L6",
+        "hospital": "...",
+        "orthodox church": "https://maps.app.goo.gl/N3BywoVnEPdVwvSV6",
+        "protestant church": "https://maps.app.goo.gl/qhzZ8fqkF2gd6XESA",
+        "mosque": "https://maps.app.goo.gl/ELVQSW5aXt4VLX548"
+      }
+    }
+  },
+  {
+    "Woliso Campus": {
+      "name": ["woliso Campus", "AUWC Campus", "weliso campus", "waliso campus"],
+      "gate_closing_time": "Not specified",
+      "dorm_types": ["8-student rooms (1 locker shared by 2)"],
+      "utilities": ["stable electricity", "water inconsistency for showers", "Wi-Fi not specified"],
+      "cleaning_schedule": "Closed Tuesdays & Fridays 2:00-4:00 PM for deep cleaning",
+      "map": {
+        "cafe": "https://maps.app.goo.gl/eEkvTVSWMjuc2ihU7",
+        "dorm male": "https://maps.app.goo.gl/vCHjuNZDJ7X2qaw6A AND https://maps.app.goo.gl/7ZbpYi3tyS14MAsF8",
+        "dorm female": "https://maps.app.goo.gl/ADDFRE8XRnqPLAsW7",
+        "library": "https://maps.app.goo.gl/eoPa1S2pLWFSuQL8A",
+        "launch": "https://maps.app.goo.gl/fjpwLExa2ofeFd9J9",
+        "clinic": "https://maps.app.goo.gl/Luz2xdL2UmFkFAd97",
+        "registrial": "https://maps.app.goo.gl/Z5Yu6WgA3ZNzjs4x6",
+        "bus station": "https://maps.app.goo.gl/P9fTDbmBN3eQNACr9",
+        "hospital": "https://maps.app.goo.gl/xbePWnz2g4AHHh2s6",
+        "orthodox church": "https://maps.app.goo.gl/96UmGinKUQ3yrAVbA",
+        "protestant church": "https://maps.app.goo.gl/32aAwoyL6vdbE8FJ7",
+        "mosque": "https://maps.app.goo.gl/dW1BKfF7iHZtPLhr9"
+      }
+    }
+  }
+]
