@@ -1,7 +1,7 @@
-// server.js - FIXED for Railway
+// server.js - WORKING VERSION
 import express from 'express';
 import cors from 'cors';
-import { rag } from './rag/index.js'; 
+import { rag } from './rag/index.js';
 
 const app = express();
 
@@ -13,23 +13,24 @@ const allowedOrigins = [
   'http://localhost:3000'
 ];
 
-app.use(cors({
+// Simple CORS configuration - FIXED
+const corsOptions = {
   origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl requests)
     if (!origin) return callback(null, true);
-    console.log('Request from origin:', origin);
     
-    if (allowedOrigins.some(allowed => 
-      origin === allowed || origin.includes('vercel.app') || origin.includes('railway.app')
-    )) {
+    if (allowedOrigins.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
-      console.log('CORS blocked origin:', origin);
-      callback(new Error('Not allowed by CORS'), false);
+      callback(new Error('Not allowed by CORS'));
     }
   },
-  credentials: true
-}));
+  credentials: true,
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+};
 
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Initialize RAG once
@@ -123,8 +124,8 @@ app.get('/', (req, res) => {
   });
 });
 
-// Handle preflight requests
-app.options('*', cors());
+// Handle preflight requests - REMOVED THE BROKEN LINE
+// app.options('*', cors()); // THIS WAS CAUSING THE ERROR
 
 // CRITICAL FIX: Railway provides PORT environment variable
 const PORT = process.env.PORT || 3001;
@@ -136,10 +137,4 @@ app.listen(PORT, HOST, () => {
   console.log(`🏥 Health: https://rag-server-production.up.railway.app/api/health`);
   console.log(`🔍 Query: POST https://rag-server-production.up.railway.app/api/rag/query`);
   console.log(`🎓 Serving: Ambo University students and staff`);
-  
-  // Log Railway environment info
-  console.log('🚂 Railway Environment:');
-  console.log('PORT:', process.env.PORT);
-  console.log('RAILWAY_ENVIRONMENT:', process.env.RAILWAY_ENVIRONMENT);
-  console.log('RAILWAY_GIT_COMMIT_SHA:', process.env.RAILWAY_GIT_COMMIT_SHA?.substring(0, 8));
 });
