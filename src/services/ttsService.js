@@ -5,7 +5,7 @@ class TTSService {
     this.isPlaying = false;
 
     // ⚠️ Your API key here
-    this.API_KEY = `${import.meta.env.REACT_APP_ELEVENLABS_API_KEY}`;
+    this.API_KEY = `sk_b759d5adfff0b5ea15b4cc6e878736148f5a884441a0763a`;
 
     // Brian official voice ID
     this.BRIAN_VOICE_ID = "EXAVITQu4vr4xnSDxMaL";
