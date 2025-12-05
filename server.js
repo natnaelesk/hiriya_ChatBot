@@ -1,4 +1,4 @@
-// server.js - Update CORS for your specific domains
+// server.js - FIXED for Railway
 import express from 'express';
 import cors from 'cors';
 import { rag } from './rag/index.js';
@@ -7,36 +7,27 @@ const app = express();
 
 // Allow your Vercel frontend and local development
 const allowedOrigins = [
-  'https://hiriya-chat-bot.vercel.app',    // Your Vercel frontend
-  'https://rag-server-production.up.railway.app', // Your Railway backend
-  'http://localhost:5173',  // Vite dev server
-  'http://localhost:3000'   // Alternative local
+  'https://hiriya-chat-bot.vercel.app',
+  'https://rag-server-production.up.railway.app',
+  'http://localhost:5173',
+  'http://localhost:3000'
 ];
 
 app.use(cors({
   origin: function (origin, callback) {
-    // Allow requests with no origin
     if (!origin) return callback(null, true);
-    
-    // Log all origins for debugging
     console.log('Request from origin:', origin);
     
-    // Check if origin is allowed
-    const isAllowed = allowedOrigins.some(allowed => 
-      origin === allowed || origin.startsWith(allowed.replace('https://', 'http://'))
-    );
-    
-    if (isAllowed) {
+    if (allowedOrigins.some(allowed => 
+      origin === allowed || origin.includes('vercel.app') || origin.includes('railway.app')
+    )) {
       callback(null, true);
     } else {
       console.log('CORS blocked origin:', origin);
-      // For now, allow all in production but log it
-      callback(null, true);
+      callback(new Error('Not allowed by CORS'), false);
     }
   },
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'Accept']
+  credentials: true
 }));
 
 app.use(express.json());
@@ -116,7 +107,7 @@ app.post('/api/rag/query', async (req, res) => {
   }
 });
 
-// Root endpoint - simple info
+// Root endpoint
 app.get('/', (req, res) => {
   res.json({
     service: 'Hiriya RAG Server',
@@ -135,11 +126,20 @@ app.get('/', (req, res) => {
 // Handle preflight requests
 app.options('*', cors());
 
+// CRITICAL FIX: Railway provides PORT environment variable
 const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => {
-  console.log(`✅ Hiriya RAG Server running on port ${PORT}`);
+const HOST = '0.0.0.0'; // Railway needs this, not 'localhost'
+
+app.listen(PORT, HOST, () => {
+  console.log(`✅ Hiriya RAG Server running on ${HOST}:${PORT}`);
   console.log(`🌐 Public URL: https://rag-server-production.up.railway.app`);
   console.log(`🏥 Health: https://rag-server-production.up.railway.app/api/health`);
   console.log(`🔍 Query: POST https://rag-server-production.up.railway.app/api/rag/query`);
   console.log(`🎓 Serving: Ambo University students and staff`);
+  
+  // Log Railway environment info
+  console.log('🚂 Railway Environment:');
+  console.log('PORT:', process.env.PORT);
+  console.log('RAILWAY_ENVIRONMENT:', process.env.RAILWAY_ENVIRONMENT);
+  console.log('RAILWAY_GIT_COMMIT_SHA:', process.env.RAILWAY_GIT_COMMIT_SHA?.substring(0, 8));
 });
