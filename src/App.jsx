@@ -87,7 +87,7 @@ function App() {
     return [
       { 
         id: 1, 
-        text: `👋 **Hello! I'm Lumina**\n\nYour dedicated AI assistant for **Ambo University**. I can help you with:\n\n• Campus locations and directions\n• Academic programs and departments\n• Admission procedures\n• University services and facilities\n• Campus policies and student life\n\nWhat would you like to know about Ambo University today?`, 
+        text: `👋 **Hello! I'm Hiriya**\n\nYour dedicated AI assistant for **Ambo University**. I can help you with:\n\n• Campus locations and directions\n• Academic programs and departments\n• Admission procedures\n• University services and facilities\n• Campus policies and student life\n\nWhat would you like to know about Ambo University today?`, 
         isUser: false, 
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       }
