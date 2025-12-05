@@ -1,7 +1,7 @@
 // server.js - FIXED for Railway
 import express from 'express';
 import cors from 'cors';
-import { rag } from './rag/index.js';
+import { rag } from './rag/index.js'; 
 
 const app = express();
 

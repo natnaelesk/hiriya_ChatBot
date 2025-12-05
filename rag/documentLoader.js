@@ -15,8 +15,8 @@ export function loadAndChunkDocuments() {
   
   try {
     // Try relative path first
-    knowledgePath = path.join(process.cwd(), 'src', 'data', 'knowledge.json');
-    locationsPath = path.join(process.cwd(), 'src', 'data', 'locations.json');
+    knowledgePath = path.join(process.cwd(), 'data', 'knowledge.json');
+    locationsPath = path.join(process.cwd(), 'data', 'locations.json');
     
     console.log('Looking for files at:');
     console.log('Knowledge:', knowledgePath);
