@@ -2,7 +2,24 @@
 import { SYSTEM_PROMPT, formatLocationResponse } from './prompts.js';
 
 // RAG API endpoint
-const RAG_API_URL = 'http://localhost:3001/api/rag/query';
+// services/chatService.js - Update this section
+const getRAGApiUrl = () => {
+  // Use environment variable if set (for Vercel)
+  if (import.meta.env.VITE_RAG_API_URL) {
+    return import.meta.env.VITE_RAG_API_URL;
+  }
+  
+  // Production (Railway) - YOUR ACTUAL URL
+  if (import.meta.env.PROD) {
+    return 'https://rag-server-production.up.railway.app/api/rag/query';
+  }
+  
+  // Development
+  return 'http://localhost:3001/api/rag/query';
+};
+
+const RAG_API_URL = getRAGApiUrl();
+console.log('Hiriya using RAG API:', RAG_API_URL);
 
 // Simple conversation memory
 const conversationHistory = [];
