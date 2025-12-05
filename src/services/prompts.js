@@ -34,5 +34,7 @@ Formatting Guidelines:
 
 // Helper to format location responses
 export const formatLocationResponse = (place, link) => {
-  return `${place} is located here: <map>${link}</map>`;
+  // Remove literal closing </map> if accidentally included in link
+  const cleanLink = link.replace(/<\/map>$/, '').trim();
+  return `${place} is located here: <map>${cleanLink}</map>`;
 };

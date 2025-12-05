@@ -1,25 +1,19 @@
 // services/chatService.js - Updated to use RAG API
 import { SYSTEM_PROMPT, formatLocationResponse } from './prompts.js';
 
-// RAG API endpoint
-// services/chatService.js - Update this section
 const getRAGApiUrl = () => {
-  // Use environment variable if set (for Vercel)
+  // Use environment variable if set (for Vercel / local)
   if (import.meta.env.VITE_RAG_API_URL) {
     return import.meta.env.VITE_RAG_API_URL;
   }
-  
-  // Production (Railway) - YOUR ACTUAL URL
-  if (import.meta.env.PROD) {
-    return 'https://rag-server-production.up.railway.app/api/rag/query';
-  }
-  
-  // Development
-  return 'http://localhost:3001/api/rag/query';
+
+  // Default to Railway deployment
+  return 'https://hiriyachatbotbackend-production.up.railway.app';
 };
 
 const RAG_API_URL = getRAGApiUrl();
 console.log('Hiriya using RAG API:', RAG_API_URL);
+
 
 // Simple conversation memory
 const conversationHistory = [];
@@ -176,7 +170,10 @@ export const sendMessageToAPI = async (message) => {
         }
       }
     }
-    
+    // Clean up any stray </map> in the AI response
+aiResponse = aiResponse.replace(/<\/map>/g, '');
+console.log('AI Response (cleaned):', aiResponse);
+
     // Update history
     addToHistory('user', msg);
     addToHistory('assistant', aiResponse);
