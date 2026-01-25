@@ -659,14 +659,6 @@ This project is part of the Hiriya Chatbot initiative for Ambo University, creat
 
 ---
 
-## 🙏 Acknowledgments
-
-- **Ambo University** - For providing the knowledge base and support
-- **Developer's Club** - For creating and maintaining this project
-- **Open Source Community** - For amazing tools and libraries
-
----
-
 <div align="center">
 
 **Built with ❤️ for Ambo University**
