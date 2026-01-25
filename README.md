@@ -177,8 +177,8 @@ Built with **React 19** • Powered by **RAG** • Enhanced with **Text-to-Speec
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/pdf-chatbot.git
-   cd pdf-chatbot/LuminaAI
+   git clone https://github.com/natnaelesk/hiriya_ChatBot.git
+   cd hiriya_ChatBot/LuminaAI
    ```
 
 2. **Install dependencies**
@@ -222,8 +222,8 @@ Built with **React 19** • Powered by **RAG** • Enhanced with **Text-to-Speec
 
 #### 1. **Clone Repository**
 ```bash
-git clone https://github.com/your-username/pdf-chatbot.git
-cd pdf-chatbot/LuminaAI
+git clone https://github.com/natnaelesk/hiriya_ChatBot.git
+cd hiriya_ChatBot/LuminaAI
 ```
 
 #### 2. **Install Dependencies**
@@ -567,7 +567,7 @@ Contributions are welcome! Here's how you can help:
 
 1. **Fork the repository**
    ```bash
-   git fork https://github.com/your-username/pdf-chatbot.git
+   git fork https://github.com/natnaelesk/hiriya_ChatBot.git
    ```
 
 2. **Create a feature branch**
@@ -640,7 +640,7 @@ This project is part of the Hiriya Chatbot initiative for Ambo University, creat
 
 ### Frontend
 - 🌐 **Live Application**: [https://hiriya-chat-bot.vercel.app](https://hiriya-chat-bot.vercel.app)
-- 📦 **Frontend Repository**: [Current Repository](#)
+- 📦 **Frontend Repository**: [https://github.com/natnaelesk/hiriya_ChatBot](https://github.com/natnaelesk/hiriya_ChatBot)
 
 ### Backend
 - 🔌 **Backend API**: [https://hiriyachatbotbackend-production.up.railway.app](https://hiriyachatbotbackend-production.up.railway.app)
