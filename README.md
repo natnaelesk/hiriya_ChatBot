@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Hiriya Chatbot Hero](./LuminaAI/backend/hero.png)
+![Hiriya Chatbot Hero](./hero.png)
 
 [![React](https://img.shields.io/badge/React-19.2-blue?style=for-the-badge&logo=react)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-7.2-646CFF?style=for-the-badge&logo=vite)](https://vitejs.dev/)
