@@ -1,0 +1,27 @@
+node_modules/
+dist/
+dist-ssr/
+.DS_Store
+*.log
+*.local
+
+# Env files (NEVER commit real keys)
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+
+# Build artefacts
+.cache/
+coverage/
+
+# Knowledge base data (real docs are user-supplied; keep .gitkeep)
+backend/data/*
+!backend/data/.gitkeep
+!backend/data/README.md

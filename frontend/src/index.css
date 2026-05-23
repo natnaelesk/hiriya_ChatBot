@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Calistoga&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #fafafa;
+  --foreground: #0f172a;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --accent: #0052ff;
+  --accent-secondary: #4d7cff;
+  --accent-foreground: #ffffff;
+  --border: #e2e8f0;
+  --card: #ffffff;
+  --ring: #0052ff;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.08);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+  --shadow-accent: 0 4px 14px rgba(0, 82, 255, 0.25);
+  --shadow-accent-lg: 0 8px 24px rgba(0, 82, 255, 0.35);
+  --gradient-accent: linear-gradient(to right, #0052ff, #4d7cff);
+  --gradient-accent-diagonal: linear-gradient(135deg, #0052ff, #4d7cff);
+  /* Legacy aliases */
+  --pg-background: var(--background);
+  --pg-foreground: var(--foreground);
+  --pg-muted: var(--muted);
+  --pg-muted-foreground: var(--muted-foreground);
+  --pg-border: var(--border);
+  --pg-soft-border: var(--border);
+  --pg-accent: var(--accent);
+  --pg-secondary: var(--accent-secondary);
+  --pg-tertiary: color-mix(in srgb, var(--accent) 8%, var(--card));
+  --pg-card: var(--card);
+  --pg-ring: var(--ring);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Inter", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+.font-display {
+  font-family: "Calistoga", Georgia, serif;
+  letter-spacing: -0.02em;
+}
+
+.font-mono-ui {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+}
+
+.mm-gradient-text {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.mm-gradient-underline {
+  position: absolute;
+  bottom: -0.25rem;
+  left: 0;
+  height: 0.75rem;
+  width: 100%;
+  border-radius: 0.125rem;
+  background: linear-gradient(to right, rgba(0, 82, 255, 0.15), rgba(77, 124, 255, 0.1));
+}
+
+.mm-btn-primary {
+  background: var(--gradient-accent);
+}
+
+.mm-btn-primary:hover:not(:disabled) {
+  filter: brightness(1.08);
+  box-shadow: var(--shadow-accent);
+}
+
+.mm-inverted {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+.mm-dot-pattern {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 1px) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.03;
+}
+
+.mm-ambient-glow {
+  pointer-events: none;
+  position: absolute;
+  border-radius: 9999px;
+  background: var(--accent);
+  filter: blur(150px);
+  opacity: 0.06;
+}
+
+@keyframes mm-float-a {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes mm-float-b {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+@keyframes mm-spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes mm-pulse-dot-keyframes {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.7;
+  }
+}
+
+.mm-float-a {
+  animation: mm-float-a 5s ease-in-out infinite;
+}
+
+.mm-float-b {
+  animation: mm-float-b 4s ease-in-out infinite;
+}
+
+.mm-spin-slow {
+  animation: mm-spin-slow 60s linear infinite;
+}
+
+.mm-pulse-dot {
+  animation: mm-pulse-dot-keyframes 2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mm-float-a,
+  .mm-float-b,
+  .mm-spin-slow,
+  .mm-pulse-dot {
+    animation: none !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.001ms !important;
+  }
+}
+
+.prose-chat {
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.prose-chat p {
+  margin: 0 0 0.65em;
+}
+
+.prose-chat p:last-child {
+  margin-bottom: 0;
+}
+
+.prose-chat ul,
+.prose-chat ol {
+  margin: 0.45em 0;
+}
+
+.prose-chat h2,
+.prose-chat h3 {
+  font-family: "Calistoga", Georgia, serif;
+  font-weight: 400;
+  color: var(--foreground);
+  margin-top: 1em;
+  margin-bottom: 0.35em;
+}
+
+.prose-chat a {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.prose-chat a:hover {
+  color: var(--accent-secondary);
+}
+
+.prose-chat code {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.88em;
+  background: var(--muted);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+.prose-chat pre {
+  background: var(--muted);
+  border-radius: 12px;
+  padding: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.prose-chat blockquote {
+  border-left: 3px solid var(--border);
+  padding-left: 0.75rem;
+  color: var(--muted-foreground);
+}
+
+.prose-chat th,
+.prose-chat td {
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.75rem;
+}
+
+.prose-chat th {
+  background: var(--muted);
+  text-align: left;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

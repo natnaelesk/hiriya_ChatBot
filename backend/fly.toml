@@ -1,0 +1,43 @@
+# Fly.io app config for the Hiriya backend.
+# Bootstrap:
+#   flyctl launch --no-deploy --copy-config --name hiriya-api --region fra
+#   flyctl secrets set GEMINI_API_KEY=... GROQ_API_KEY=... ELEVENLABS_API_KEY=... \
+#     SUPABASE_URL=... SUPABASE_SERVICE_ROLE_KEY=... CLERK_SECRET_KEY=...
+#   flyctl deploy
+
+app = "hiriya-api"
+primary_region = "fra"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  NODE_ENV = "production"
+  PORT = "3001"
+  HOST = "0.0.0.0"
+  CORS_ORIGINS = "https://hiriya.vercel.app,http://localhost:5173"
+
+[http_service]
+  internal_port = 3001
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+  [http_service.concurrency]
+    type = "requests"
+    soft_limit = 50
+    hard_limit = 100
+
+  [[http_service.checks]]
+    grace_period = "10s"
+    interval = "30s"
+    method = "GET"
+    timeout = "5s"
+    path = "/api/health"
+
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 512

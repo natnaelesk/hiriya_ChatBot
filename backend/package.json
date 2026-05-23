@@ -1,0 +1,40 @@
+{
+  "name": "hiriya-backend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "node --watch src/index.js",
+    "start": "node src/index.js",
+    "ingest": "node scripts/ingest.js",
+    "reset": "node scripts/reset.js",
+    "migrate": "node scripts/migrate.js",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@clerk/express": "^1.4.5",
+    "@google/genai": "^1.5.0",
+    "@supabase/supabase-js": "^2.49.4",
+    "cheerio": "^1.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "groq-sdk": "^0.17.0",
+    "marked": "^15.0.6",
+    "pdf-parse": "^1.1.1",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "eslint": "^9.39.1",
+    "globals": "^16.5.0",
+    "supertest": "^7.0.0",
+    "vitest": "^2.1.9"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

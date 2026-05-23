@@ -1,0 +1,25 @@
+{
+  "name": "hiriya-chatbot",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Hiriya — RAG-powered AI assistant for Ambo University.",
+  "type": "module",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev:frontend": "npm --workspace frontend run dev",
+    "dev:backend": "npm --workspace backend run dev",
+    "dev:all": "node scripts/dev.mjs",
+    "build:frontend": "npm --workspace frontend run build",
+    "lint": "npm --workspace frontend run lint && npm --workspace backend run lint",
+    "test": "npm --workspace frontend run test && npm --workspace backend run test",
+    "ingest": "npm --workspace backend run ingest",
+    "rag:reset": "npm --workspace backend run reset"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}
